@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd-playground-myapp
-
+  namespace: argocd-myapp
 
 spec:
   rules:
@@ -13,7 +13,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: myapp
+            name: argocd-playground-myapp
             port:
               number: 80
   ingressClassName: nginx
