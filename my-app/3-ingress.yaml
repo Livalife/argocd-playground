@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-playground-myapp
+
+
+spec:
+  rules:
+  - host: argocd-playground-myapp.livahealthcare.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: myapp
+            port:
+              number: 80
+  ingressClassName: nginx
