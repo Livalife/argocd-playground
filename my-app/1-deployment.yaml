@@ -20,4 +20,4 @@ spec:
       - name: nginx
         image: kaspernielsenliva/argocd-playground:0.1.0
         ports:
-          containerPort: 80
+          - containerPort: 80
